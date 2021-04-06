@@ -8,7 +8,9 @@ Add and view cars, Update rates
     <head>
         <title>Car Rental </title>
         <link href="pstyles.css" rel="stylesheet" type="text/css" />
-
+        <script src = "script.js" type = "text/javascript"/></script>
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+        <link href="css/style.css" rel="stylesheet">
       <!-- FAVICON -->
       <link rel="shortcut icon" href="images/favicon.png">
 
@@ -21,12 +23,13 @@ Add and view cars, Update rates
 
      
     </head>
-    <body>
+    <body onload="loadCustomerFilter()">
         
 		<div class="logoBackground">
   	<div class="logo"><h6>Car Rental <h6></div>
     
   </div>
+  <div class="logout" onclick="logout()">Logout</div>
 		<div class="menu">
   	<ul>
     	<li><a href="index.html">Home</a></li>
@@ -34,14 +37,14 @@ Add and view cars, Update rates
        
 		
         <li id="active"><a href="">inventory</a></li>
-        <li><a href="book.html">Book car</a></li>
+        <!-- <li><a href="book.html">Book car</a></li> -->
         <li><a href="return.html">return car</a></li>
       
     </ul>
   </div>
 	
 
-  <section class="r-car-showcase-wrapper">
+  <!-- <section class="r-car-showcase-wrapper">
     <div class="r-best-vehicles">
       <div class="container">
         <div class="row">
@@ -57,12 +60,12 @@ Add and view cars, Update rates
             </div>
 
             <div class="r-car-showcase">
-              <div class="row clearfix r-best-offer-list">
+              <div class="row clearfix r-best-offer-list" id="inventory">
                 <div class="col-xl-6 col-lg-6 col-md-12 col-sm-12 col-xs-12">
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -87,7 +90,7 @@ Add and view cars, Update rates
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-6.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-6.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -102,8 +105,9 @@ Add and view cars, Update rates
                         
                         </ul>
                       </div>
-                      <div class="r-offer-rewst-this">
-                        <span class="text-uppercase"> <a href="book.html">Rent this car</a></span>
+                      <div class="r-offer-rewst-this row" style="margin-left: 0px;">
+                        <span class="text-uppercase col-md-6" style="background: darkorange;"> <a href="book.html">Rent this car</a></span>
+                        <span class="text-uppercase col-md-6" style="background: orangered;"> <a href="book.html">Return</a></span>
                       </div>
                     </div>
                   </div>
@@ -112,7 +116,7 @@ Add and view cars, Update rates
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-3.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-3.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -138,7 +142,7 @@ Add and view cars, Update rates
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -164,7 +168,7 @@ Add and view cars, Update rates
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-1.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -190,7 +194,7 @@ Add and view cars, Update rates
                   <div class="r-best-offer-single">
                     <div class="r-best-offer-in">
                       <div class="r-offer-img">
-                        <a class="d-inline-block" href="#"><img src="C:\Users\sanat\OneDrive\Desktop\car-rental-master\CarRental\images/car-6.png" class="img-fluid d-block m-auto" alt=""></a>
+                        <a class="d-inline-block" href="#"><img src="D:\CarRental\git\Web\Web\images/car-6.png" class="img-fluid d-block m-auto" alt=""></a>
                         <div class="r-offer-img-over">
                           <i class="fa fa-search"></i>
                         </div>
@@ -213,7 +217,7 @@ Add and view cars, Update rates
                 </div>
 
               </div>
-            </div> <!-- /r-car-showcase -->
+            </div>
 
 
 
@@ -221,9 +225,30 @@ Add and view cars, Update rates
         </div>
       </div>
     </div>
-  </section> <!-- /r-car-showcase-wrapper -->
+  </section> -->
 
- 
+  <section class="r-car-showcase-wrapper">
+    <div class="r-best-vehicles">
+      <div class="container">
+        <div class="row">
+
+          <div class="col-lg-9 col-md-8 col-sm-12">
+            <div class="r-car-filter-area" id="filter">
+            </div>
+
+            <div class="r-car-showcase">
+              <div class="row clearfix r-best-offer-list" id="inventory">
+
+              </div>
+            </div>
+
+
+
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
  
 
 

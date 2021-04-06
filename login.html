@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <title>Login Page </title>
-
+	<script src = "script.js" type = "text/javascript"/></script>
 	<link href="css/bootstrap.min.css" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 	
@@ -19,7 +19,7 @@
 		<div class="container my-5">
 			<div class="row">
 				<div class="col-md-6">
-					<img src="C:\Users\Admin\OneDrive\Desktop\car-rental-master\CarRental\images/carfront.jpeg" alt=""width="600" height="600">
+					<img src="D:\CarRental\git\Web\Web\images\carfront.jpeg" alt=""width="600" height="600">
 				</div>
 				<div class="col-md-6">
 					<div class="row my-5">
@@ -28,17 +28,19 @@
 								<h3 class="">Sign In</h3>
 								<a class="btn regbtn  ml-auto" href="register.html">Sign Up</a>
 							</div>
-							<div class="row mx-1 mb-3">
-								<label>Username:</label>
-								<input type="text" class="form-control" placeholder="enter username">
-							</div>
-							<div class="row mx-1 mb-3">
-								<label>Password:</label>
-								<input type="password" class="form-control" placeholder="enter password">
-							</div>
-							<div class="row mx-1 mb-3">
-								<a class="btn signbtn btn-block" href="index.html">Sign In</a>
-							</div>
+							<form name="login">
+								<div class="row mx-1 mb-3">
+									<label>Username:</label>
+									<input type="text" class="form-control" placeholder="enter username" name="username">
+								</div>
+								<div class="row mx-1 mb-3">
+									<label>Password:</label>
+									<input type="password" class="form-control" placeholder="enter password" name="password">
+								</div>
+								<div class="row mx-1 mb-3">
+									<a class="btn signbtn btn-block" onclick="logIn();">Sign In</a>
+								</div>
+							</form>
 						</div>
 						
 					</div>
